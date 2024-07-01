@@ -24,6 +24,7 @@ Unhandled exception: System.ComponentModel.Win32Exception (5): An error occurred
 ### VS Code Extensions
 
 - [C# DevKit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) - One of the cool things added by this extension other than C# support is the "Solution Explorer" window.
+- [Nuget Gallery](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery) - It will create a new tab in your terminal window "NUGET". Use this window to manage packages.
 
 Use `dotnet new list` to see a list of project templates you can use to create .NET projects.
 
@@ -89,7 +90,10 @@ You'll need to run the above commands as an administrator.
 Ensure to install the following two packages:
 
 - `Microsoft.EntityFrameworkCore.Sqlite`
-- `Microsoft.EntityFrameworkCore.Design`
+- `Microsoft.EntityFrameworkCore.Design` - Code-first.
+
+### When using code-first EF is used for...
+Performing database operations such as querying, change tracking, saving, concurrency (default is optimistic concurrency), transactions, caching, built-in conventions, and database schema migrations.
 
 ### SQLite Extension
 Install the SQLite extension by `alexcvzz` to view your database. You'll open the command palatte with CTRL+SHIFT+P... And choose the option to open a database. Your database will show up in the list if you've already done a `dotnet ef database update` and you'll be able to access it in your explore pane. Look for SQLite Explorer.
@@ -101,9 +105,25 @@ Open the SQLite explorer by using the `CTRL+SHIFT+P` shortcut. Pick our database
 
 ### Data Migrations
 
+- [`dotnet-ef` on `nuget`](https://www.nuget.org/packages/dotnet-ef/)
 - Use `dotnet tool install --global dotnet-ef --version` in order to install `dotnet-ef`. You'd normally want to install this globally unless you need a specific version for a specific project.
 - Use `dotnet tool list` to get the listing of tools. This will display the `dotnet-ef` version if one is installed. Use `dotnet tool list -g` to see the global tool list. `dotnet tool list --local` to list all locally installed tools.
+```
+dotnet tool install --global dotnet-ef --version 8.0.6
+dotnet ef migrations -h
+dotnet ef migrations add InitialCreate -o Data/Migrations
+```
+If you get the following error (which you've done twice in a row now):
 
+```
+SQLite Error 1: 'no such table: __EFMigrationsHistory'.
+```
+Take a good look at where you've added the `ConnectionStrings` property. Twice you've added it under "Logging" in `appsettings.Development.json`.
+```
+"ConnectionStrings": {
+  "DefaultConnection": "Data source=datingapp.db"
+}
+```
 For whatever reason, you may wish to use a specific version of dotnet-ef for a project (perhaps you’re learning something on Udemy). You can set up a manifest file for your solution. Take a look at [this article](https://learn.microsoft.com/en-us/dotnet/core/tools/local-tools-how-to-use). When you create a new tool manifest it will create a file here: .config\dotnet-tools.json and add your version to it.
 
 The commands that you can use are also listed on the [official nuget](https://www.nuget.org/packages/dotnet-ef/) dotnet-ef site.
