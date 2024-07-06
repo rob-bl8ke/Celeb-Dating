@@ -134,31 +134,38 @@ Before running the `dotnet-ef database update` it will be useful to make sure yo
 
 # Angular
 
+```
+ng new client
+```
+```
+? Which stylesheet format would you like to use? CSS             [ https://developer.mozilla.org/docs/Web/CSS                     ]
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? (y/N) N
+```
+```
+? Which stylesheet format would you like to use? CSS             [ https://developer.mozilla.org/docs/Web/CSS                     ]
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+```
+
+```
+cd client
+ng serve
+```
+
+## Standalone Components
+
+From Angular 16, the default is to use stand-alone components instead of the old modular style where one would declare all components inside an app module (`app.module.ts`).
+
 # References
 
 - [`DatingApp`](https://github.com/trycatchlearn/datingapp) and [here on Udemy](https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch)
+  - also take note of the [legacy code for Angular 16](https://github.com/TryCatchLearn/DatingApp-DotNet7Angular16)
 
+### Angular Links
 
-```
-  Id     Duration CommandLine
-  --     -------- -----------
-   1        0.567 dotnet sdk check
-   3        1.329 git clone https://github.com/rob-bl8ke/Celeb-Dating.git
-   6        0.686 choco -?
-   7        0.211 winget --help
-   8        0.450 dotnet --info
+- [Angular Compatibility Guide](https://angular.dev/reference/versions) - Angular, Node, TypeScript and RxJs compatibility sets.
+- [Angular versioning and releases](https://angular.dev/reference/releases)
+- [npm Semantic Versioning](https://docs.npmjs.com/about-semantic-versioning) - How it works and what the carats and squigglies mean.
 
-   2        0.020 history
-   3        0.207 winget --help
-   4        0.008 history
-   5        1.425 dotnet new sln
-   6        0.430 dotnet new webapi -h
-   7        2.286 dotnet new webapi -controllers -n API
-   8        0.270 dotnet sln list
-   9        0.638 dotnet sln add .\API
-  10        0.012 cd .\API\
-  11        6.943 dotnet run
-  12    12:09.177 dotnet run
-  13    15:20.246 dotnet run
-```
+### Node Packages
+- [ng-gallery](https://www.npmjs.com/package/ng-gallery)
 
