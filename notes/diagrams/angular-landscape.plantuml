@@ -1,0 +1,37 @@
+@startmindmap
++ Angular
+++ Components
++++ Databinding
+++++_ Output Data
++++++_ String interpolation
++++++_ Property binding
+++++_ React to
++++++_ Event binding
+++++_ 2-way binding
++++++_ FormsModule
+++++++_ [ngModel]
+
+
+++ Directives
++++_ Instructions\nin the DOM
+++++_ typically manifest as attributes
+++++_ existing
++++++_ structural
+++++++_ ngIf, ngSwitch
+++++++_ ngFor
++++++_ ngStyle, ngClass
+
+
+++ Services and Dependency Injection
+++ Routing
+++ CLI
+++ Observables
+++ Forms
+++ Pipes
+++ Http
+++ Authentication
+++ Optimizations & NgModules
+++ Deployment
+++ Animations
+++ Testing
+@endmindmap

@@ -1,0 +1,31 @@
+@startmindmap "Angular Concepts"
+
++ Components
+++[#ff3] Templates
++++ Template Reference
++++ ng-template
+++++_ Can see the variables and data available to it\navailable to the template in which it is embedded.
+++++_ Can have its own private variables (let-varName).
+++++ ngTemplateOutlet
+++++ context: {} property
+++++_ Use @Input() and TemplateRef to pass templates into child components.
+++ Content Projection
++++_ **Inject content into child components**
++++ ng-content
+++++_ select parts by tag or class
++++ ContentChild, ContentChildren
+++++_ **Select content that has been injected into this component**
+++++_ Use **OnAfterContentInit** to perform extra content initialization
+++ Life-cycle Hooks
++++ ngAfterViewInit
+++ Decorators
++++ Input, Output
++++ ViewChild, ViewChildren, QueryList
+++ Routing
++++_ data
+++++ Resolvers
+++ Control Flow
++++ Structural Directives (NgFor, NgIf)
++++ Built in control flows (@for, @if)
+
+@endmindmap

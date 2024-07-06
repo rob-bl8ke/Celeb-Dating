@@ -1,0 +1,28 @@
+@startmindmap "Angular Concepts"
+
++ Concepts
+++ Configuration
++++ ApplicationConfig
+++++_ Anything used globally
+++++_ Introduced because of stand-alone components
++++ angular.json
++++ package.json
++++ tsconfig.json
+++ Components
++++ Stand-alone
++++ Modular (legacy)
+++ Directives
++++ Strutural Directives
+++++ Core
++++++_ ngIf
++++++_ ngFor
++++++_ ngSwitch
++++++_ [ngClass]
++++++_ [ngStyle]
++++++_ [ng-container]
++++ Attribute Directives
+++++ d
+++ Pipes
+++ Routing
+
+@endmindmap
