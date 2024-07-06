@@ -103,6 +103,10 @@ Take a look at `appsettings.Development.json` to see how the connection string i
 Open the SQLite explorer by using the `CTRL+SHIFT+P` shortcut. Pick our database. You'll see a pane appear under your explorer pane in VS Code.
 - Righ click on a table to view, query, etc.
 
+#### Important information regarding `appsettings` files
+
+These files SHOULD NOT be saved to source control (especially the production settings) as they can contain sensitive information such as database connection strings. In this case its fine as the only database used is created locally.
+
 ### Data Migrations
 
 - [`dotnet-ef` on `nuget`](https://www.nuget.org/packages/dotnet-ef/)
@@ -132,6 +136,8 @@ The commands that you can use are also listed on the [official nuget](https://ww
 
 Before running the `dotnet-ef database update` it will be useful to make sure your solutions builds with a `dotnet build`.
 
+
+
 # Angular
 
 ```
@@ -155,10 +161,27 @@ ng serve
 
 From Angular 16, the default is to use stand-alone components instead of the old modular style where one would declare all components inside an app module (`app.module.ts`).
 
+# Recommended VS Code Settings
+
+## Brackets
+You should ensure the setting "Editor > Bracket Pair Colorization:Enabled" is set. Also "Editor > Guides: Bracket Pairs" should be set to true. Also set "Editor: Auto Closing Brackets" to always and "Auto Closing Quotes" to always.
+
 # References
 
 - [`DatingApp`](https://github.com/trycatchlearn/datingapp) and [here on Udemy](https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch)
   - also take note of the [legacy code for Angular 16](https://github.com/TryCatchLearn/DatingApp-DotNet7Angular16)
+
+# VS Code Extensions
+
+- [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+- [C# DevKit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+- [C# Extensions](https://marketplace.visualstudio.com/items?itemName=kreativ-software.csharpextensions)
+- [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [Nuget Gallery](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
 
 ### Angular Links
 
