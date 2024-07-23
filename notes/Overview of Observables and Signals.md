@@ -51,7 +51,6 @@ Excellent for synchronous state management in an application.
 
 - Logging in and logging out users (in this application).
 
-
 ```typescript
   currentUser = signal<User | null>(null);
   
@@ -71,6 +70,7 @@ Excellent for synchronous state management in an application.
     this.currentUser.set(null);
   }
 ```
+
 ```typescript
   setCurrentUser() {
     const userString = localStorage.getItem('user');
@@ -81,9 +81,36 @@ Excellent for synchronous state management in an application.
 ```
 
 ```
-    @if (accountService.currentUser()) {
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        ...
-      </ul>
-    }
+  @if (accountService.currentUser()) {
+    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      ...
+    </ul>
+  }
+```
+
+#### Inputs as Angular Signals
+
+The following approach is simply an extension of an Angular Signal. Rather than use `@Input()` use this newer form from Angular 17.3 upwards. This allows one to get compile-time checking in the html template if 
+
+```typescript
+import { Component, input } from '@angular/core';
+
+@Component({
+  selector: 'app-register',
+  ...
+})
+export class RegisterComponent {
+  usersFromHomeComponent = input.required<any>();
+}
+```
+Note the brackets (as this is a signal getter function).
+
+```html
+  <select class="form-select">
+      @for (user of usersFromHomeComponent(); track $index) {
+          <option [value]="user.userName">
+              {{user.userName}}
+          </option>
+      }
+  </select>
 ```
